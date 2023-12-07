@@ -1,0 +1,6 @@
+{
+    "homeTitle" : "Flutter Riverpod Demo",
+    "@homeTitle" : {
+        "description": "A title for home page"
+    }
+}
