@@ -10,4 +10,8 @@
 // with an arrow key and entered. Therefore, following this approach to declare
 // a constant value is good along the way.
 
+import 'package:flutter/material.dart' show SizedBox;
+
 const kReqResBaseUrl = 'https://reqres.in';
+const kMediumPadding = 16.0;
+const kBoxSeparator = SizedBox(height: 8.0);

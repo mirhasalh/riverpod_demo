@@ -14,11 +14,13 @@ Future<void> getTotalPages({
 }) async {
   try {
     late String path;
+
     if (type == PageType.user) {
       path = '/api/users';
     } else {
       path = '/api/unknown';
     }
+    
     final url = Uri.parse('$kReqResBaseUrl$path');
     final res = await http.get(url);
 

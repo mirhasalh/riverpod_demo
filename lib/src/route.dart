@@ -7,14 +7,28 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case '/':
       return MaterialPageRoute(builder: (_) => const HomePage());
     case '/colors':
-      return MaterialPageRoute(builder: (_) => const ColorsPage());
+      final args = settings.arguments as ColorsArgs;
+      return MaterialPageRoute(
+          builder: (_) => ColorsPage(totalPages: args.totalPages));
     case '/users':
-      return MaterialPageRoute(builder: (_) => const UsersPage());
+      final args = settings.arguments as UsersArgs;
+      return MaterialPageRoute(
+          builder: (_) => UsersPage(totalPages: args.totalPages));
     default:
       return MaterialPageRoute(
         builder: (_) => Scaffold(
           body: Center(
-            child: Text('No route defined for ${settings.name}'),
+            child: Text.rich(
+              TextSpan(
+                text: 'No route defined for: ',
+                children: [
+                  TextSpan(
+                    text: '${settings.name}',
+                    style: const TextStyle(color: Colors.blue),
+                  )
+                ],
+              ),
+            ),
           ),
         ),
       );

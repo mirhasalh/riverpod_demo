@@ -12,7 +12,7 @@ class App extends StatelessWidget {
       title: 'Flutter Riverpod Demo',
       theme: theme,
       darkTheme: darkTheme,
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.dark,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       onGenerateRoute: onGenerateRoute,

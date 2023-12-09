@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 // designed to work well together and meet contrast requirements for
 // accessibility.
 
-const seedColor = Colors.deepPurple;
+const seedColor = Color(0xff3789c4);
 
 final theme = ThemeData.light().copyWith(
   colorScheme: ColorScheme.fromSeed(
