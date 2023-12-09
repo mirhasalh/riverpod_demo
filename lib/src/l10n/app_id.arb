@@ -1,3 +1,6 @@
 {
-    "homeTitle": "Demonstrasi Flutter Riverpod"
+    "homeTitle": "Demonstrasi Flutter Riverpod",
+    "languageSettings": "Pengaturan bahasa",
+    "english": "Inggris",
+    "indonesian": "Bahasa Indonesia"
 }
