@@ -19,6 +19,9 @@ $ flutter pub get
 
 # Run the Flutter app
 $ flutter run
+
+# Run all the tests in the test directory at once
+$ flutter test
 ```
 
 ## Run scripts
