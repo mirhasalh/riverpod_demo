@@ -2,6 +2,15 @@
 
 A simple Flutter project for demoing Riverpod.
 
+## Features ✨
+
+- Native Flutter named route
+- Flutter scripts
+- Model generator
+- Multi-languages support
+- Theme switcher (light, dark, and system)
+- APIs management with Riverpod
+
 ## Installation
 
 ```bash
