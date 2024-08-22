@@ -1,6 +1,10 @@
 # riverpod_demo
 
-A simple Flutter project for demoing Riverpod.
+A Flutter project demonstrating the minimal implementation of Riverpod.
+
+# Target platform.
+
+- Android
 
 ## Features ✨
 
@@ -9,7 +13,7 @@ A simple Flutter project for demoing Riverpod.
 - Model generator
 - Multi-languages support
 - Theme switcher (light, dark, and system)
-- APIs management with Riverpod
+- Fetch APIs with Riverpod
 
 ## Installation
 
