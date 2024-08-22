@@ -1,5 +1,7 @@
 # riverpod_demo
 
+<img src="images/icon.png" height="120">
+
 A Flutter project demonstrating the minimal implementation of Riverpod.
 
 # Target platform.
