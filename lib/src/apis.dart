@@ -20,7 +20,7 @@ Future<void> getTotalPages({
     } else {
       path = '/api/unknown';
     }
-    
+
     final url = Uri.parse('$kReqResBaseUrl$path');
     final res = await http.get(url);
 

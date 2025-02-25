@@ -8,9 +8,9 @@ part of 'color_source.dart';
 
 _$ColorSourceImpl _$$ColorSourceImplFromJson(Map<String, dynamic> json) =>
     _$ColorSourceImpl(
-      id: json['id'] as int,
+      id: (json['id'] as num).toInt(),
       name: json['name'] as String,
-      year: json['year'] as int,
+      year: (json['year'] as num).toInt(),
       color: json['color'] as String,
       pantoneValue: json['pantone_value'] as String,
     );

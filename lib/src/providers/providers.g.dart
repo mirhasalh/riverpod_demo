@@ -6,7 +6,7 @@ part of 'providers.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$colorsHash() => r'71660fb5b3ac9b985e13c2d616caaf1e7de37bd7';
+String _$colorsHash() => r'1b16eeacd4bf4065b67c720b85cf8578950f07fb';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -39,21 +39,13 @@ class ColorsFamily extends Family<AsyncValue<List<ColorSource>>> {
   const ColorsFamily();
 
   /// See also [colors].
-  ColorsProvider call({
-    required int page,
-  }) {
-    return ColorsProvider(
-      page: page,
-    );
+  ColorsProvider call({required int page}) {
+    return ColorsProvider(page: page);
   }
 
   @override
-  ColorsProvider getProviderOverride(
-    covariant ColorsProvider provider,
-  ) {
-    return call(
-      page: provider.page,
-    );
+  ColorsProvider getProviderOverride(covariant ColorsProvider provider) {
+    return call(page: provider.page);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -74,23 +66,17 @@ class ColorsFamily extends Family<AsyncValue<List<ColorSource>>> {
 /// See also [colors].
 class ColorsProvider extends AutoDisposeFutureProvider<List<ColorSource>> {
   /// See also [colors].
-  ColorsProvider({
-    required int page,
-  }) : this._internal(
-          (ref) => colors(
-            ref as ColorsRef,
-            page: page,
-          ),
-          from: colorsProvider,
-          name: r'colorsProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$colorsHash,
-          dependencies: ColorsFamily._dependencies,
-          allTransitiveDependencies: ColorsFamily._allTransitiveDependencies,
-          page: page,
-        );
+  ColorsProvider({required int page})
+    : this._internal(
+        (ref) => colors(ref as ColorsRef, page: page),
+        from: colorsProvider,
+        name: r'colorsProvider',
+        debugGetCreateSourceHash:
+            const bool.fromEnvironment('dart.vm.product') ? null : _$colorsHash,
+        dependencies: ColorsFamily._dependencies,
+        allTransitiveDependencies: ColorsFamily._allTransitiveDependencies,
+        page: page,
+      );
 
   ColorsProvider._internal(
     super._createNotifier, {
@@ -141,20 +127,23 @@ class ColorsProvider extends AutoDisposeFutureProvider<List<ColorSource>> {
   }
 }
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 mixin ColorsRef on AutoDisposeFutureProviderRef<List<ColorSource>> {
   /// The parameter `page` of this provider.
   int get page;
 }
 
 class _ColorsProviderElement
-    extends AutoDisposeFutureProviderElement<List<ColorSource>> with ColorsRef {
+    extends AutoDisposeFutureProviderElement<List<ColorSource>>
+    with ColorsRef {
   _ColorsProviderElement(super.provider);
 
   @override
   int get page => (origin as ColorsProvider).page;
 }
 
-String _$usersHash() => r'35edafd066116ce2d4364338fd892637210363ae';
+String _$usersHash() => r'12bc45b81e16fe31d5022904ce89f663979ab980';
 
 /// See also [users].
 @ProviderFor(users)
@@ -166,21 +155,13 @@ class UsersFamily extends Family<AsyncValue<List<User>>> {
   const UsersFamily();
 
   /// See also [users].
-  UsersProvider call({
-    required int page,
-  }) {
-    return UsersProvider(
-      page: page,
-    );
+  UsersProvider call({required int page}) {
+    return UsersProvider(page: page);
   }
 
   @override
-  UsersProvider getProviderOverride(
-    covariant UsersProvider provider,
-  ) {
-    return call(
-      page: provider.page,
-    );
+  UsersProvider getProviderOverride(covariant UsersProvider provider) {
+    return call(page: provider.page);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -201,23 +182,17 @@ class UsersFamily extends Family<AsyncValue<List<User>>> {
 /// See also [users].
 class UsersProvider extends AutoDisposeFutureProvider<List<User>> {
   /// See also [users].
-  UsersProvider({
-    required int page,
-  }) : this._internal(
-          (ref) => users(
-            ref as UsersRef,
-            page: page,
-          ),
-          from: usersProvider,
-          name: r'usersProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$usersHash,
-          dependencies: UsersFamily._dependencies,
-          allTransitiveDependencies: UsersFamily._allTransitiveDependencies,
-          page: page,
-        );
+  UsersProvider({required int page})
+    : this._internal(
+        (ref) => users(ref as UsersRef, page: page),
+        from: usersProvider,
+        name: r'usersProvider',
+        debugGetCreateSourceHash:
+            const bool.fromEnvironment('dart.vm.product') ? null : _$usersHash,
+        dependencies: UsersFamily._dependencies,
+        allTransitiveDependencies: UsersFamily._allTransitiveDependencies,
+        page: page,
+      );
 
   UsersProvider._internal(
     super._createNotifier, {
@@ -268,6 +243,8 @@ class UsersProvider extends AutoDisposeFutureProvider<List<User>> {
   }
 }
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 mixin UsersRef on AutoDisposeFutureProviderRef<List<User>> {
   /// The parameter `page` of this provider.
   int get page;
@@ -280,5 +257,6 @@ class _UsersProviderElement extends AutoDisposeFutureProviderElement<List<User>>
   @override
   int get page => (origin as UsersProvider).page;
 }
+
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

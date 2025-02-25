@@ -12,7 +12,8 @@ part of 'color_source.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 ColorSource _$ColorSourceFromJson(Map<String, dynamic> json) {
   return _ColorSource.fromJson(json);
@@ -27,8 +28,12 @@ mixin _$ColorSource {
   @JsonKey(name: 'pantone_value')
   String get pantoneValue => throw _privateConstructorUsedError;
 
+  /// Serializes this ColorSource to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ColorSource
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ColorSourceCopyWith<ColorSource> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -36,15 +41,17 @@ mixin _$ColorSource {
 /// @nodoc
 abstract class $ColorSourceCopyWith<$Res> {
   factory $ColorSourceCopyWith(
-          ColorSource value, $Res Function(ColorSource) then) =
-      _$ColorSourceCopyWithImpl<$Res, ColorSource>;
+    ColorSource value,
+    $Res Function(ColorSource) then,
+  ) = _$ColorSourceCopyWithImpl<$Res, ColorSource>;
   @useResult
-  $Res call(
-      {int id,
-      String name,
-      int year,
-      String color,
-      @JsonKey(name: 'pantone_value') String pantoneValue});
+  $Res call({
+    int id,
+    String name,
+    int year,
+    String color,
+    @JsonKey(name: 'pantone_value') String pantoneValue,
+  });
 }
 
 /// @nodoc
@@ -57,6 +64,8 @@ class _$ColorSourceCopyWithImpl<$Res, $Val extends ColorSource>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ColorSource
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -66,28 +75,36 @@ class _$ColorSourceCopyWithImpl<$Res, $Val extends ColorSource>
     Object? color = null,
     Object? pantoneValue = null,
   }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      year: null == year
-          ? _value.year
-          : year // ignore: cast_nullable_to_non_nullable
-              as int,
-      color: null == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as String,
-      pantoneValue: null == pantoneValue
-          ? _value.pantoneValue
-          : pantoneValue // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            id:
+                null == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
+                        as int,
+            name:
+                null == name
+                    ? _value.name
+                    : name // ignore: cast_nullable_to_non_nullable
+                        as String,
+            year:
+                null == year
+                    ? _value.year
+                    : year // ignore: cast_nullable_to_non_nullable
+                        as int,
+            color:
+                null == color
+                    ? _value.color
+                    : color // ignore: cast_nullable_to_non_nullable
+                        as String,
+            pantoneValue:
+                null == pantoneValue
+                    ? _value.pantoneValue
+                    : pantoneValue // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -95,16 +112,18 @@ class _$ColorSourceCopyWithImpl<$Res, $Val extends ColorSource>
 abstract class _$$ColorSourceImplCopyWith<$Res>
     implements $ColorSourceCopyWith<$Res> {
   factory _$$ColorSourceImplCopyWith(
-          _$ColorSourceImpl value, $Res Function(_$ColorSourceImpl) then) =
-      __$$ColorSourceImplCopyWithImpl<$Res>;
+    _$ColorSourceImpl value,
+    $Res Function(_$ColorSourceImpl) then,
+  ) = __$$ColorSourceImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int id,
-      String name,
-      int year,
-      String color,
-      @JsonKey(name: 'pantone_value') String pantoneValue});
+  $Res call({
+    int id,
+    String name,
+    int year,
+    String color,
+    @JsonKey(name: 'pantone_value') String pantoneValue,
+  });
 }
 
 /// @nodoc
@@ -112,9 +131,12 @@ class __$$ColorSourceImplCopyWithImpl<$Res>
     extends _$ColorSourceCopyWithImpl<$Res, _$ColorSourceImpl>
     implements _$$ColorSourceImplCopyWith<$Res> {
   __$$ColorSourceImplCopyWithImpl(
-      _$ColorSourceImpl _value, $Res Function(_$ColorSourceImpl) _then)
-      : super(_value, _then);
+    _$ColorSourceImpl _value,
+    $Res Function(_$ColorSourceImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of ColorSource
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -124,40 +146,48 @@ class __$$ColorSourceImplCopyWithImpl<$Res>
     Object? color = null,
     Object? pantoneValue = null,
   }) {
-    return _then(_$ColorSourceImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      year: null == year
-          ? _value.year
-          : year // ignore: cast_nullable_to_non_nullable
-              as int,
-      color: null == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as String,
-      pantoneValue: null == pantoneValue
-          ? _value.pantoneValue
-          : pantoneValue // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+    return _then(
+      _$ColorSourceImpl(
+        id:
+            null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as int,
+        name:
+            null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                    as String,
+        year:
+            null == year
+                ? _value.year
+                : year // ignore: cast_nullable_to_non_nullable
+                    as int,
+        color:
+            null == color
+                ? _value.color
+                : color // ignore: cast_nullable_to_non_nullable
+                    as String,
+        pantoneValue:
+            null == pantoneValue
+                ? _value.pantoneValue
+                : pantoneValue // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$ColorSourceImpl implements _ColorSource {
-  const _$ColorSourceImpl(
-      {required this.id,
-      required this.name,
-      required this.year,
-      required this.color,
-      @JsonKey(name: 'pantone_value') required this.pantoneValue});
+  const _$ColorSourceImpl({
+    required this.id,
+    required this.name,
+    required this.year,
+    required this.color,
+    @JsonKey(name: 'pantone_value') required this.pantoneValue,
+  });
 
   factory _$ColorSourceImpl.fromJson(Map<String, dynamic> json) =>
       _$$ColorSourceImplFromJson(json);
@@ -180,7 +210,7 @@ class _$ColorSourceImpl implements _ColorSource {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ColorSourceImpl &&
@@ -192,12 +222,14 @@ class _$ColorSourceImpl implements _ColorSource {
                 other.pantoneValue == pantoneValue));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, name, year, color, pantoneValue);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ColorSource
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ColorSourceImplCopyWith<_$ColorSourceImpl> get copyWith =>
@@ -205,20 +237,18 @@ class _$ColorSourceImpl implements _ColorSource {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ColorSourceImplToJson(
-      this,
-    );
+    return _$$ColorSourceImplToJson(this);
   }
 }
 
 abstract class _ColorSource implements ColorSource {
-  const factory _ColorSource(
-          {required final int id,
-          required final String name,
-          required final int year,
-          required final String color,
-          @JsonKey(name: 'pantone_value') required final String pantoneValue}) =
-      _$ColorSourceImpl;
+  const factory _ColorSource({
+    required final int id,
+    required final String name,
+    required final int year,
+    required final String color,
+    @JsonKey(name: 'pantone_value') required final String pantoneValue,
+  }) = _$ColorSourceImpl;
 
   factory _ColorSource.fromJson(Map<String, dynamic> json) =
       _$ColorSourceImpl.fromJson;
@@ -234,8 +264,11 @@ abstract class _ColorSource implements ColorSource {
   @override
   @JsonKey(name: 'pantone_value')
   String get pantoneValue;
+
+  /// Create a copy of ColorSource
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ColorSourceImplCopyWith<_$ColorSourceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

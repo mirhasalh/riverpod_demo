@@ -35,18 +35,17 @@ class _HomePageState extends ConsumerState<HomePage> {
     final b = Theme.of(context).brightness.name;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.homeTitle),
-      ),
+      appBar: AppBar(title: Text(l10n.homeTitle)),
       drawer: Drawer(
         child: SafeArea(
           child: Column(
             children: [
               ListTile(
-                onTap: () => nav.pushNamed(
-                  '/language-settings',
-                  arguments: LanguageArgs(langCode: locale),
-                ),
+                onTap:
+                    () => nav.pushNamed(
+                      '/language-settings',
+                      arguments: LanguageArgs(langCode: locale),
+                    ),
                 style: ListTileStyle.drawer,
                 leading: const Icon(Icons.language),
                 title: Text(l10n.languageSettings),
@@ -78,50 +77,54 @@ class _HomePageState extends ConsumerState<HomePage> {
           mainAxisSize: MainAxisSize.max,
           children: [
             OutlinedButton(
-              onPressed: _loading
-                  ? null
-                  : () async {
-                      setState(() {
-                        _tappedPageType = PageType.color;
-                        _loading = true;
-                      });
+              onPressed:
+                  _loading
+                      ? null
+                      : () async {
+                        setState(() {
+                          _tappedPageType = PageType.color;
+                          _loading = true;
+                        });
 
-                      await getTotalPages(
-                        type: PageType.color,
-                        onTotalPages: (v) {
-                          setState(() => _loading = false);
-                          final args = ColorsArgs(totalPages: v);
-                          nav.pushNamed('/colors', arguments: args);
-                        },
-                        onError: (_) => setState(() => _loading = false),
-                      );
-                    },
-              child: _tappedPageType == PageType.color && _loading
-                  ? const TinyCircularProgressIndicator()
-                  : const Text('To colors page'),
+                        await getTotalPages(
+                          type: PageType.color,
+                          onTotalPages: (v) {
+                            setState(() => _loading = false);
+                            final args = ColorsArgs(totalPages: v);
+                            nav.pushNamed('/colors', arguments: args);
+                          },
+                          onError: (_) => setState(() => _loading = false),
+                        );
+                      },
+              child:
+                  _tappedPageType == PageType.color && _loading
+                      ? const TinyCircularProgressIndicator()
+                      : const Text('To colors page'),
             ),
             OutlinedButton(
-              onPressed: _loading
-                  ? null
-                  : () async {
-                      setState(() {
-                        _tappedPageType = PageType.user;
-                        _loading = true;
-                      });
+              onPressed:
+                  _loading
+                      ? null
+                      : () async {
+                        setState(() {
+                          _tappedPageType = PageType.user;
+                          _loading = true;
+                        });
 
-                      await getTotalPages(
-                        type: PageType.user,
-                        onTotalPages: (v) {
-                          setState(() => _loading = false);
-                          final args = UsersArgs(totalPages: v);
-                          nav.pushNamed('/users', arguments: args);
-                        },
-                        onError: (_) => setState(() => _loading = false),
-                      );
-                    },
-              child: _tappedPageType == PageType.user && _loading
-                  ? const TinyCircularProgressIndicator()
-                  : const Text('To users page'),
+                        await getTotalPages(
+                          type: PageType.user,
+                          onTotalPages: (v) {
+                            setState(() => _loading = false);
+                            final args = UsersArgs(totalPages: v);
+                            nav.pushNamed('/users', arguments: args);
+                          },
+                          onError: (_) => setState(() => _loading = false),
+                        );
+                      },
+              child:
+                  _tappedPageType == PageType.user && _loading
+                      ? const TinyCircularProgressIndicator()
+                      : const Text('To users page'),
             ),
           ],
         ),
@@ -135,24 +138,27 @@ class _HomePageState extends ConsumerState<HomePage> {
 
     showModalBottomSheet(
       context: context,
-      builder: (context) => Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const _DragHandler(),
-          ...ThemeMode.values.map(
-            (v) => RadioListTile(
-              value: v,
-              groupValue: themeMode,
-              onChanged: (v) {
-                ref.read(themeProvider).setThemeMode(v!);
-                nav.pop();
-              },
-              title: Text('${v.name[0].toUpperCase()}${v.name.substring(1)}'),
-            ),
+      builder:
+          (context) => Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const _DragHandler(),
+              ...ThemeMode.values.map(
+                (v) => RadioListTile(
+                  value: v,
+                  groupValue: themeMode,
+                  onChanged: (v) {
+                    ref.read(themeProvider).setThemeMode(v!);
+                    nav.pop();
+                  },
+                  title: Text(
+                    '${v.name[0].toUpperCase()}${v.name.substring(1)}',
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
     );
   }
 }

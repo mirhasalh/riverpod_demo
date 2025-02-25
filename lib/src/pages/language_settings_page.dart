@@ -31,9 +31,7 @@ class _LanguageSettingsPageState extends ConsumerState<LanguageSettingsPage> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.languageSettings),
-      ),
+      appBar: AppBar(title: Text(l10n.languageSettings)),
       body: ListView.separated(
         itemBuilder: (context, index) {
           var language = TranslatedLanguage.values[index];
@@ -57,10 +55,7 @@ class _LanguageSettingsPageState extends ConsumerState<LanguageSettingsPage> {
 
   String _getLanguageName(TranslatedLanguage language) {
     final l10n = AppLocalizations.of(context)!;
-
     switch (language) {
-      case TranslatedLanguage.en:
-        return l10n.english;
       case TranslatedLanguage.id:
         return l10n.indonesian;
       default:
@@ -81,8 +76,6 @@ class _LanguageSettingsPageState extends ConsumerState<LanguageSettingsPage> {
 
   Locale _getLocale(TranslatedLanguage language) {
     switch (language) {
-      case TranslatedLanguage.en:
-        return const Locale('en');
       case TranslatedLanguage.id:
         return const Locale('id');
       default:

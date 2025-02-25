@@ -25,23 +25,24 @@ class _ColorsPageState extends ConsumerState<ColorsPage> {
     final colors = ref.watch(ColorsProvider(page: _page));
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Colors'),
-      ),
+      appBar: AppBar(title: const Text('Colors')),
       body: colors.when(
-        data: (data) => ListView.separated(
-          itemBuilder: (context, index) {
-            final color = int.parse('0xff${data[index].color.substring(1)}');
+        data:
+            (data) => ListView.separated(
+              itemBuilder: (context, index) {
+                final color = int.parse(
+                  '0xff${data[index].color.substring(1)}',
+                );
 
-            return ColorCard(
-              color: Color(color),
-              title: data[index].name,
-              index: index,
-            );
-          },
-          separatorBuilder: (_, __) => kBoxSeparator,
-          itemCount: data.length,
-        ),
+                return ColorCard(
+                  color: Color(color),
+                  title: data[index].name,
+                  index: index,
+                );
+              },
+              separatorBuilder: (_, __) => kBoxSeparator,
+              itemCount: data.length,
+            ),
         error: (_, __) => const CenterText(text: 'Failed to load'),
         loading: () => const Center(child: CircularProgressIndicator()),
       ),

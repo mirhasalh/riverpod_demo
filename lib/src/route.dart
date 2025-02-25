@@ -9,32 +9,36 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case '/colors':
       final args = settings.arguments as ColorsArgs;
       return MaterialPageRoute(
-          builder: (_) => ColorsPage(totalPages: args.totalPages));
+        builder: (_) => ColorsPage(totalPages: args.totalPages),
+      );
     case '/users':
       final args = settings.arguments as UsersArgs;
       return MaterialPageRoute(
-          builder: (_) => UsersPage(totalPages: args.totalPages));
+        builder: (_) => UsersPage(totalPages: args.totalPages),
+      );
     case '/language-settings':
       final args = settings.arguments as LanguageArgs;
       return MaterialPageRoute(
-          builder: (_) => LanguageSettingsPage(langCode: args.langCode));
+        builder: (_) => LanguageSettingsPage(langCode: args.langCode),
+      );
     default:
       return MaterialPageRoute(
-        builder: (_) => Scaffold(
-          body: Center(
-            child: Text.rich(
-              TextSpan(
-                text: 'No route defined for: ',
-                children: [
+        builder:
+            (_) => Scaffold(
+              body: Center(
+                child: Text.rich(
                   TextSpan(
-                    text: '${settings.name}',
-                    style: const TextStyle(color: Colors.blue),
-                  )
-                ],
+                    text: 'No route defined for: ',
+                    children: [
+                      TextSpan(
+                        text: '${settings.name}',
+                        style: const TextStyle(color: Colors.blue),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
-          ),
-        ),
       );
   }
 }
